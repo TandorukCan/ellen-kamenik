@@ -1,0 +1,746 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+/* @import MyBackgroundImage from ./assets/Bg.jpeg; */
+@import url(https://db.onlinewebfonts.com/c/6daaeacf369f5c15f3308f379ab05b77?family=Futura+LT+Light);
+@import url(https://db.onlinewebfonts.com/c/fd6e6c30c7d355528ba9428eea942445?family=Futura+Book);
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap);
+@import url(https://db.onlinewebfonts.com/c/116af611cbcd9e4bada60b4e700430c1?family=Avenir+Light);
+@import url(https://db.onlinewebfonts.com/c/79e4dc6a81171b1523795cb6b2bc7b2f?family=Avenir+LT+Pro+85+Heavy);
+@import url(https://db.onlinewebfonts.com/c/39a2c7f346d5cfae7045aeb2fb50d9ad?family=Lulo+Clean+W01+One+Bold);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap);
+
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+main {
+  padding-top: 112px;
+  position: static;
+  display: grid;
+  height: auto;
+  width: 100%;
+  min-height: 40px;
+  grid-template-rows: repeat(8, min-content) 1fr;
+  grid-template-columns: 100%;
+  padding-bottom: 0px;
+  box-sizing: border-box;
+}
+.App {
+  height: max-content;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60% center;
+  aspect-ratio: unset;
+  /* height: 570px; */
+  /* above (570px) is in case the images are different sizes. Mine are not. This can be used if there are changes to the images*/
+}
+
+.CarouselWrapper .slide img {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.CarouselWrapper .slide {
+  transform: scale(0.3);
+  transition: transform 300ms;
+  opacity: 0.5;
+  display: flex;
+}
+
+.CarouselWrapper .activeSlide {
+  display: flex;
+  transform: scale(0.9);
+  opacity: 1;
+  margin: 10% 0 0 calc(3vw - 55px);
+}
+
+.ImgCarouselWrapper {
+  margin-bottom: 8vh;
+}
+
+.ImgCarouselWrapper .imgCar img {
+  width: calc((100vw - 13px) / 3);
+  height: 589px;
+  object-fit: cover;
+}
+
+.ImgCarouselWrapper .slick-track {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slick-slider .slick-list {
+  margin: 0 0 0 -1vw;
+}
+
+.ImgCarouselWrapper div.slick-slide.slick-active {
+  display: flex;
+  justify-content: center;
+}
+
+.ImgCarouselWrapper div.slick-slide.slick-active.slick-center.slick-current {
+  margin: 0px 7px;
+}
+
+.arrow {
+  background-color: transparent;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  transform: scale(2.5);
+}
+
+.arrow svg {
+  transition: color 300ms;
+  color: white;
+}
+
+.arrow svg:hover {
+  color: plum;
+}
+
+.next {
+  right: 3%;
+  top: 50%;
+}
+
+.prev {
+  left: 3%;
+  top: 50%;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  height: 112px;
+  background: rgb(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+header.chakra-modal__header.css-1x2vgm7 {
+  background: none;
+  box-shadow: none;
+}
+
+chakra-modal__body.css-qlig70 {
+  text-align: center;
+}
+
+header img {
+  margin-right: 18vw;
+  margin-top: -1.5vh;
+  transform: scale(1.7);
+}
+
+.Hero {
+  background: rgba(243, 235, 250, 0.72);
+}
+
+.Hero article {
+  position: static;
+  display: grid;
+  height: auto;
+  width: 100%;
+  min-height: auto;
+  grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-columns: 100%;
+}
+
+.profileImg {
+  width: calc(11.5vw + 600px);
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  margin: 25px 0px 0px calc((100% - 980px) * 0.5);
+  left: 113px;
+  grid-area: 1 / 1 / 5 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.Hero h3 {
+  position: relative;
+  margin: 130px calc(13vw + 364px) 67px 0px;
+  justify-self: center;
+  left: 1.4em;
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: start;
+  width: 395px;
+  height: auto;
+  font-size: 40px;
+  letter-spacing: 0.01em;
+  color: rgb(0, 58, 150);
+  vertical-align: baseline;
+  overflow-wrap: break-word;
+  text-align: start;
+  font-family: "Futura LT Light", sans-serif;
+  font-weight: bold;
+}
+
+.Hero h1 {
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+  font-family: "Futura Book", sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  line-height: normal;
+  color: rgb(0, 58, 150);
+  position: relative;
+  margin: 188px 0px 67px calc((100% - 980px) * 0.5);
+  left: 113px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+  width: 395px;
+  text-align: start;
+}
+
+.Hero h4 {
+  position: relative;
+  margin: 16px calc(13vw + 538px) 50px 0px;
+  justify-self: center;
+  grid-area: 3 / 1 / 4 / 2;
+  align-self: start;
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+  font-size: 40px;
+  font-family: "Futura LT Light", sans-serif;
+  color: rgb(0, 58, 150);
+  line-height: normal;
+  text-align: start;
+  font-weight: lighter;
+}
+
+.Hero h2 {
+  position: relative;
+  margin: 16px calc(13vw + 340px) 67px 0px;
+  justify-self: center;
+  grid-area: 2 / 1 / 3 / 2;
+  align-self: start;
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+  font-family: "Futura LT Light", helvetica-w01-bold, helvetica-w02-bold,
+    helvetica-lt-w10-bold, sans-serif;
+  font-size: 54px;
+  font-weight: 600;
+  color: #c8eef5;
+  text-shadow: rgba(0, 0, 0, 0.498039) -1px -1px 0px,
+    rgba(0, 0, 0, 0.498039) -1px 1px 0px, rgba(0, 0, 0, 0.498039) 1px 1px 0px,
+    rgba(0, 0, 0, 0.498039) 1px -1px 0px;
+  line-height: normal;
+  pointer-events: auto;
+  visibility: inherit;
+  overflow-wrap: break-word;
+  text-align: start;
+  transition-duration: 700ms;
+  width: 304px;
+  height: auto;
+}
+
+.multi {
+  display: block;
+  font-size: 40px;
+  font-family: "Futura Book", sans-serif;
+  letter-spacing: 0.2em;
+  color: rgb(0, 58, 150);
+  line-height: 96px;
+  text-align: center;
+  margin: auto;
+  background: none;
+}
+
+.Arrow {
+  transform: rotate(90deg);
+}
+
+.Highlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: -2em;
+  background: rgba(156, 155, 160, 0.6);
+  align-items: center;
+}
+
+.contentWrapper {
+  margin-top: -40px;
+  margin-right: 50px;
+  position: static;
+  display: grid;
+  height: auto;
+  min-height: auto;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 100%;
+}
+
+.DesignOne {
+  height: 199px;
+  width: 198px;
+}
+.DesignOneWrapper svg:hover,
+.DesignTwoWrapper svg:hover {
+  transition: all 0.7s ease-in-out 0s;
+  scale: 1.3;
+}
+
+.DesignOneWrapper {
+  background-color: rgb(199, 199, 199, 0.69);
+  border-radius: 50%;
+  width: 302px;
+  height: 302px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 109px 0px -47px calc(4vw - 140px);
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.DesignTwoWrapper {
+  transition: all 0.4s ease-in-out 0s;
+  background-color: rgb(232, 230, 230, 0.69);
+  border-radius: 50%;
+  width: 236px;
+  height: 237px;
+  position: relative;
+  justify-self: start;
+  align-self: start;
+  margin: 39px 0px 10px calc((100% - 896px) * 0.5);
+  left: 238px;
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DesignTwo {
+  height: 156px;
+  width: 155px;
+}
+
+.contentWrapper .one {
+  position: relative;
+  margin: 0px 0px 43px 0;
+  left: 59px;
+  grid-area: 2 / 1 / 3 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.contentWrapper .two {
+  position: relative;
+  margin: 35px 0px -47px 0;
+  left: -69px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.contentWrapper .three {
+  position: relative;
+  margin: 91px 0px -103px 0;
+  left: 397px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.content1 {
+  height: 308px;
+  width: calc(10vw + 508px);
+  position: relative;
+  margin: 0px 0px 43px 0;
+  left: 59px;
+  grid-area: 2 / 1 / 3 / 2;
+  justify-self: start;
+  align-self: start;
+  background-color: rgb(243, 235, 250);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 30px;
+  border: 1px solid black;
+}
+.content1 a {
+  align-self: end;
+  letter-spacing: 0.03em;
+  color: #423737;
+  font-size: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 300;
+  padding-bottom: 1em;
+}
+
+.content1 h1 {
+  padding-top: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: normal;
+  font-size: 32px;
+  line-height: 1.4em;
+  color: #624c40;
+  vertical-align: baseline;
+}
+
+.content1 h2 {
+  margin-left: 60px;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: normal;
+  font-size: 24px;
+  line-height: 1.4em;
+  color: #624c40;
+}
+
+.content1 h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  color: #624c40;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4em;
+}
+
+.content1 p {
+  margin-left: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  color: #423737;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+
+.contentWrapper img {
+  outline: 1px solid white;
+  outline-offset: -6px;
+  width: calc(6vw + 274px);
+  position: relative;
+  margin: 139px 0px -103px -39px;
+  left: 397px;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.contentWrapper img:hover {
+  transition: 1s;
+  scale: 1.1;
+}
+
+.arrowWrapper {
+  transform: scale(0.6);
+  margin: -9vh 0.2vw -13vh 0vw;
+}
+
+.arrowWrapperTwo {
+  width: min-content;
+  margin: -123px 0vh -4vh -3px;
+  transform: scale(0.6);
+}
+
+.arrowWrapperThree {
+  display: block;
+  width: min-content;
+  margin: -45px auto;
+  transform: scale(0.6);
+}
+
+.arrowWrapperFour {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.6);
+  margin: -13vh 0 -16vh 0vh;
+}
+
+p.moreAboutMe {
+  text-align: center;
+  padding-top: 4em;
+  font-size: 21px;
+  font-family: "Futura Book", sans-serif;
+  /* font-weight: 300; */
+  line-height: normal;
+  text-align: center;
+}
+
+.getInTouch {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgb(243, 235, 250, 0.62);
+}
+.getInTouch a {
+  text-decoration: none;
+}
+.getInTouch h1 {
+  letter-spacing: 0.01em;
+  font-family: "Futura Book", sans-serif;
+  font-size: 30px;
+  line-height: normal;
+  font-weight: 300;
+}
+.getInTouch h2 {
+  letter-spacing: 0.01em;
+  font-family: "Futura Book", sans-serif;
+  font-size: 24px;
+  line-height: normal;
+  font-weight: 300;
+}
+.getInTouchButton {
+  text-align: center;
+  font-family: "Avenir Light", sans-serif;
+  color: #8b0000;
+  font-size: 20px;
+  font-weight: 700;
+  width: 270px;
+  height: 52px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: 0px solid rgb(95, 91, 205);
+  box-shadow: 0 0 6px 0 rgba(139, 0, 0, 0.7);
+  cursor: pointer;
+}
+.getInTouchButton:hover {
+  box-shadow: 0 0 6px 0 rgb(95, 91, 205);
+}
+
+.couchArticle img {
+  width: calc(10vw + 410px);
+  height: max-content;
+  max-width: none;
+  padding: 1vh 0 2.5vw 2.4vw;
+}
+
+.Photography h1,
+.CarouselWrapper h1,
+.Multimedia h1 {
+  text-align: center;
+  font-family: "Lulo Clean W01 One Bold", lulo-clean-w05-one-bold, sans-serif;
+  color: rgb(89, 89, 89);
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0em;
+  padding-top: 10vh;
+  margin-bottom: -3vh;
+}
+
+.CarouselWrapper h1 {
+  margin-left: 1vw;
+}
+
+.Multimedia h1 {
+  margin-bottom: 0%;
+  padding: 6vh 0vh;
+}
+
+.Multimedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(203, 203, 203, 0.51);
+  padding-bottom: 5vh;
+}
+
+.Multimedia img {
+  width: 600px;
+  height: 337px;
+}
+
+/* .video-js .vjs-control-bar {
+  display: none;
+} */
+
+video.rh5v-DefaultPlayer_video {
+  width: 536px;
+  height: 304px;
+}
+
+.couch {
+  background: rgba(245, 169, 189, 0.36);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.couch button {
+  margin: 5.5em 22.2em 0 0;
+}
+
+.couchArticle {
+  display: flex;
+}
+
+.textWrapper p {
+  text-align: center;
+  font-weight: 300;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1.3em;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  margin-top: 5vh;
+  margin-left: -8vw;
+  min-width: 325px;
+}
+
+.textWrapper div {
+  font-family: "Avenir LT Pro 85 Heavy", "Avenir Light", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  color: #8b0000;
+  line-height: normal;
+  font-weight: 600;
+  width: max-content;
+  margin: 8vh 0 0 -80px;
+}
+.couchArticle svg {
+  display: inline;
+  fill: #8b0000;
+}
+
+.couchArticle span {
+  vertical-align: super;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chakra-stack.Form {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 6px 0 rgba(139, 0, 0, 0.7);
+  background-color: rgba(243, 235, 250, 0.79);
+  width: 684px;
+  height: 620px;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+textarea#subject.chakra-textarea,
+textarea#comment.chakra-textarea,
+input#email.chakra-input {
+  background-color: white;
+  width: 475px;
+  box-shadow: -3.54px 3.54px 0px 1px rgba(255, 218, 228, 1);
+  border: 2px solid black;
+  min-height: 55px;
+}
+textarea#subject.chakra-textarea:focus-visible,
+textarea#comment.chakra-textarea:focus-visible,
+input#email.chakra-input:focus-visible {
+  border: 2px solid white;
+}
+
+input#email.chakra-input.input-error {
+  border: 2px solid red;
+}
+
+textarea#comment.chakra-textarea {
+  height: 108px;
+}
+
+.formSection img {
+  display: block;
+  margin: auto;
+}
+
+.Form h1 {
+  font-family: "Futura Book", sans-serif;
+  font-weight: 300;
+  font-size: 33px;
+  margin-bottom: 0.5em;
+}
+
+.Form label {
+  font-size: 13px;
+  font-family: "Futura Book", sans-serif;
+  font-weight: 600;
+  line-height: 2.3em;
+}
+
+.Form button {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 21px;
+  background-color: rgba(255, 218, 228, 0.882);
+  width: 144px;
+  height: 50px;
+  border: none;
+  margin-top: 0.5em;
+}
+
+.Form button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+.socials img {
+  width: 3.5em;
+  height: 3.5em;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 0em 0.7em;
+}
+
+.socials ul {
+  display: flex;
+}
+
+.socials li {
+  size: 39px;
+  display: inline-block;
+}
+
+/* below might be needed when the nr of visible carousel photos are increased to 5 */
+
+/* .PhotoCarouselWrapper {
+  margin-bottom: 8vh;
+}
+
+.PhotoCarouselWrapper img {
+  height: 589px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.PhotoCarouselWrapper div.imgCar.lastImgCar,
+.PhotoCarouselWrapper div.imgCar.firstImgCar {
+  display: flex;
+  justify-content: center;
+  width: 537px;
+  outline: 5px solid red;
+}
+
+.PhotoCarouselWrapper div.imgCar.nextImgCar,
+.PhotoCarouselWrapper div.imgCar.prevImgCar {
+  display: flex;
+  justify-content: center;
+  width: 3225px;
+  outline: 5px solid green;
+}
+
+.PhotoCarouselWrapper div.imgCar.activeImgCar {
+  display: flex;
+  justify-content: center;
+  width: 3225px;
+  outline: 5px solid blue;
+} */
